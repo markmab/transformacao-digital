@@ -11,6 +11,7 @@ Ajax Contact Form
 + https://github.com/mehedidb/Ajax_Contact_Form
 */
 
+/*
 (function ($, window, document, undefined) {
     'use strict';
 
@@ -70,3 +71,10 @@ Ajax Contact Form
         e.preventDefault();
     });
 }(jQuery, window, document));
+*/
+function formSubmit(){
+
+
+
+    
+}

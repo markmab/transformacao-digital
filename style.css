@@ -849,12 +849,16 @@ input:-webkit-autofill:focus {
 }
 
 .form-double input {
-    width: calc(50% - 10px);
+    width: calc(50%);
     float: left;
 }
 
 .form-double input:last-child {
-    float: right;
+    float: left;
+}
+
+#form-ddd {
+    width: calc(10%);
 }
 
 /*-----------
