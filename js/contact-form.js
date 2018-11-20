@@ -72,9 +72,86 @@ Ajax Contact Form
     });
 }(jQuery, window, document));
 */
+var nameRef = document.getElementById('form-name');
+var emailRef = document.getElementById('form-email');
+var dddRef = document.getElementById('form-ddd');
+var phoneRef = document.getElementById('form-phone');
+var companyRef = document.getElementById("form-company");
+var sourceRef = document.getElementById('form-source');
+
+var database = firebase.database();
+
 function formSubmit(){
-
-
-
     
+    let data = {
+        nome: nameRef.value,
+        email: emailRef.value,
+        ddd: dddRef.value,
+        telefone: phoneRef.value,
+        empresa: companyRef.value,
+        source: sourceRef.options[sourceRef.selectedIndex].text
+    }
+
+    //console.log(data)
+    if (validateName(data.nome)==false){
+        alert('Nome inválido, por favor insira o seu nome completo.');
+        return 'nomeInvalido';
+    }
+
+    if (validateEmail(data.email)==false){
+        alert('Email inválido, por favor preencha novamente.');
+        return 'emailInvalido'
+    }
+
+    if (validateDDD(data.ddd)==false){
+        alert('DDD inválido, por favor preencha novamente.');
+        return 'DDDInvalido'
+    }
+
+    if (validatePhone(data.telefone)==false){
+        alert('Telefone inválido, por favor preencha novamente.');
+        return 'foneInvalido'
+    }
+
+
+
+
+
+
+    //console.log(Number(data.ddd)<0)
+    //console.log(data.nome.length)
+
+}
+
+function validatePhone(phone){
+
+    if (phone.toString().length<8) {return false}
+    //como valida um número de telefone?????
+
+    return true;
+}
+
+function validateDDD(ddd){
+
+    if (ddd>10 && ddd<100) {return true}
+
+    return false;
+}
+
+function validateEmail(email){
+
+    if (email.indexOf('@')<=1) {return false}
+    if (email.lastIndexOf('.')<=email.indexOf('@')) {return false}
+    if (email.lastIndexOf('.')==email.length-1) {return false}
+
+
+    return true
+
+}
+
+function validateName(name){
+
+    if ((name.indexOf(' ')<=0) || (name.indexOf(' ')==name.length-1)) {return false}
+    else {return true}
+
 }
