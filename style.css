@@ -169,7 +169,7 @@ input:-webkit-autofill:focus {
 /**
 *Default Background Class
 **/
-
+/**Tirei e preciso resolver depois
 .overlay:before,
 .sky-bg {
     background: #75cbe7;
@@ -177,7 +177,7 @@ input:-webkit-autofill:focus {
     background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
     color: #ffffff;
-}
+}**/
 
 .gray-bg {
     background-color: #f2fefe;
@@ -198,6 +198,8 @@ input:-webkit-autofill:focus {
     border: none;
     -webkit-box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
     box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
 }
 
 .button.white,
@@ -214,7 +216,55 @@ input:-webkit-autofill:focus {
 .button i {
     margin-left: 5px;
 }
+/**
+*Popup effect
+**/
 
+/* The actual popup (appears on top) */
+.button .popuptext {
+   visibility: hidden;
+   width: 160px;
+   background-color: #138fc2;
+   color: #fff;
+   text-align: center;
+   border-radius: 6px;
+   padding: 8px 0;
+   position: absolute;
+   z-index: 1;
+   bottom: 125%;
+   left: 50%;
+   margin-left: -80px;
+}
+
+/* Popup arrow */
+.button .popuptext::after {
+   content: "";
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.button .show {
+   visibility: visible;
+   -webkit-animation: fadeIn 1s;
+   animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity:1 ;}
+}
 /**
 *Page title
 **/
@@ -368,12 +418,12 @@ input:-webkit-autofill:focus {
 
 .client-area,
 .header-area {
-    background: #000000 url('images/parallax-2.jpg') no-repeat scroll center center / cover;
+    background: #000000 url('images/Chamada.jpg') no-repeat scroll center center / cover;
 }
 
-.anlge-bg {
+/**.anlge-bg {
     background: url('images/angle-bg.png') no-repeat scroll center bottom -120px / 100% auto;
-}
+}**/
 
 .overlay {
     position: relative;
@@ -849,12 +899,16 @@ input:-webkit-autofill:focus {
 }
 
 .form-double input {
-    width: calc(50% - 10px);
+    width: calc(50%);
     float: left;
 }
 
 .form-double input:last-child {
-    float: right;
+    float: left;
+}
+
+#form-ddd {
+    width: calc(10%);
 }
 
 /*-----------
