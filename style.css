@@ -856,7 +856,7 @@ input:-webkit-autofill:focus {
 }
 
 .side-icon-box a {
-    color: #ffffff;
+    color: #5f5f5f;
 }
 
 .side-icon-box .side-icon {
@@ -908,7 +908,7 @@ input:-webkit-autofill:focus {
 }
 
 #form-ddd {
-    width: calc(10%);
+    width: 80px;
 }
 
 /*-----------
