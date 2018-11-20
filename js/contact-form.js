@@ -146,13 +146,62 @@ function formSubmit(){
 
             writeData(qtd,data);
             
-            //location.href= location.href.slice(0,location.href.lastIndexOf('/')+1)+'agradecimento.html';
+            
+            
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+
+            document.getElementById('submit-button').disabled = true
+
+            setTimeout(function(){ 
+                
+                //alert("Hello");
+                location.href= "https://www.sympla.com.br/success-talks-transformacao-da-sua-empresa-na-era-digital__407697"; 
+            
+            }, 3000);
+
+            
 
         }
 
         });   
 
 });
+
+}
+
+
+var tamanhoChanged = database.ref('meta/');
+
+
+
+tamanhoChanged.on('value', function(snapshot) {
+
+    let quant = snapshot.val().qtd;
+    console.log(`Leads até o momento: ${quant}`);
+
+});
+
+
+function resetDB() {
+
+    var pwd = prompt('certeza jovem? digite a senha:');
+
+    if (pwd=='padreco'){
+
+        database.ref('leads/').set({
+        
+        });  
+        database.ref('meta/').set({
+            qtd: 0
+        });  
+
+
+    }
+
+}
+
+
 
 function writeData(id,data){
 
@@ -184,7 +233,7 @@ function writeData(id,data){
     //console.log(Number(data.ddd)<0)
     //console.log(data.nome.length)
 
-}
+
 
 function validatePhone(phone){
 
