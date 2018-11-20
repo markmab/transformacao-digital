@@ -408,6 +408,7 @@ input:-webkit-autofill:focus {
 
 .mainmenu-area.affix {
     background-color: #138fc2;
+    height: 70px;
 }
 
 
@@ -1035,3 +1036,12 @@ preloader
         opacity: 0;
     }
 }
+
+.jumbotron{
+    color: #ffffff
+}
+
+#body{
+    background-color: #2f60c3
+}
+
