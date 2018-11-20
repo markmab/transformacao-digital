@@ -1044,4 +1044,10 @@ preloader
 #body{
     background-color: #2f60c3
 }
+.toptext{
+    width: 40%
+}
+.midtext{
+    width: 70%
+}
 

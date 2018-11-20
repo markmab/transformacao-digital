@@ -32,6 +32,12 @@
         -ms-flex-pack: justify;
         justify-content: space-between;
     }
+    .toptext{
+        width: 70%
+    }
+    .midtext{
+        width: 100%
+    }
 }
 
 
@@ -90,6 +96,12 @@
     }
     .mainmenu-area .logo {
         margin-left: 15px;
+    }
+    .toptext{
+        width: 100%
+    }
+    .midtext{
+        width: 100%
     }
 }
 
