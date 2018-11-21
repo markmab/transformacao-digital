@@ -590,6 +590,7 @@ input:-webkit-autofill:focus {
     color: #515656;
     text-align: center;
     position: relative;
+    min-height: 359px;
     -webkit-box-shadow: 0 5px 30px -10px rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 30px -10px rgba(0, 0, 0, 0.3);
     -webkit-transform: translateY(0);
@@ -601,12 +602,13 @@ input:-webkit-autofill:focus {
 .single-team:hover {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px)
+
 }
 
 .single-team .team-photo {
     margin-bottom: 20px;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .single-team .team-photo img {
