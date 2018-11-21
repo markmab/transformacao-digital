@@ -146,7 +146,7 @@ function formSubmit(){
 
             writeData(qtd,data);
             
-            
+            fbq('track', 'SubmitApplication');
             
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
