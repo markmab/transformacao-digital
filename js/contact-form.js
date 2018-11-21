@@ -146,7 +146,14 @@ function formSubmit(){
 
             writeData(qtd,data);
             
-            gtag('event','clique',{'event_category':'botao','event_label':'envio_formulario'});
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'conversao',
+                eventAction: 'submit',
+                eventLabel: 'Dados Recebidos'
+              });
+              
+            //gtag('event','clique',{'event_category':'botao','event_label':'envio_formulario'});
             fbq('track', 'SubmitApplication');
             
             var popup = document.getElementById("myPopup");
