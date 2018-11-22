@@ -82,7 +82,7 @@ var sourceRef = document.getElementById('form-source');
 var database = firebase.database();
 
 function formSubmit(){
-    
+
     let data = {
         nome: nameRef.value,
         email: emailRef.value,
@@ -122,9 +122,9 @@ function formSubmit(){
 
         return firebase.database().ref('/leads/').once('value').then(function(snapshot) {
 
-        var i = 0;  
+        var i = 0;
         var repetido=false
-        
+
         for (i=1;i<=qtd;i++){
 
             //console.log(snapshot.val()[i].email);
@@ -145,34 +145,34 @@ function formSubmit(){
         if (repetido == false){
 
             writeData(qtd,data);
-            
+
             ga('send', {
                 hitType: 'event',
                 eventCategory: 'conversao',
                 eventAction: 'submit',
                 eventLabel: 'Dados Recebidos'
               });
-              
+
             //gtag('event','clique',{'event_category':'botao','event_label':'envio_formulario'});
             fbq('track', 'SubmitApplication');
-            
+
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
 
             document.getElementById('submit-button').disabled = true
 
-            setTimeout(function(){ 
-                
+            setTimeout(function(){
+
                 //alert("Hello");
-                location.href= "https://www.sympla.com.br/success-talks-transformacao-da-sua-empresa-na-era-digital__407697"; 
-            
+                location.href= "#";
+
             }, 3000);
 
-            
+
 
         }
 
-        });   
+        });
 
 });
 
@@ -198,11 +198,11 @@ function resetDB() {
     if (pwd=='padreco'){
 
         database.ref('leads/').set({
-        
-        });  
+
+        });
         database.ref('meta/').set({
             qtd: 0
-        });  
+        });
 
 
     }
@@ -215,8 +215,8 @@ function writeData(id,data){
 
     var updates = {};
     updates['leads/' + (id+1)] = {
-        
-        email: data.email, 
+
+        email: data.email,
         nome: data.nome,
         telefone: `(${data.ddd})${data.telefone}`,
         empresa: data.empresa,
@@ -230,7 +230,7 @@ function writeData(id,data){
 
     //  database.ref('meta/').set({
     //     qtd: id+1
-    // });  
+    // });
 
     return firebase.database().ref().update(updates);
 
