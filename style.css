@@ -206,6 +206,11 @@ input:-webkit-autofill:focus {
   background-color: #F7AF27;
 }
 
+.button3 {
+  background-color: #F7AF27;
+  padding: 16px 60px;
+}
+
 .button.white,
 .button:hover {
     background-color: #ffffff;
@@ -307,6 +312,7 @@ input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 0 #ffffff;
     box-shadow: 0 0 0 0 #ffffff;
     -webkit-transition: 0.3s;
+    min-height: 550px;
     transition: 0.3s;
     border-radius: 5px;
     -webkit-transform: translateY(0);
@@ -415,7 +421,40 @@ input:-webkit-autofill:focus {
     height: 70px;
 }
 
+.dropbtn {
+    color: #ffffff;
+    background: none;
+    padding: 30 15px;
+    border: none;
+    position: relative;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1191C2;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 6px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #0D496B;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+}
 
 /**
 *Header-area
